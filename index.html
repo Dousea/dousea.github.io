@@ -25,7 +25,7 @@
         margin: 3rem 0rem;
       }
 
-      @media (max-width: 992px) {
+      @media (max-width: 768px) {
         body {
           text-align: center;
         }
@@ -74,12 +74,6 @@
         font-weight: 700;
         letter-spacing: 0.2rem;
       }
-
-      .figure {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 3rem;
-      }
     </style>
 	</head>
 	<body>
@@ -91,13 +85,13 @@
         <audio id="username-ipa-audio" src="username-ipa.mp3"></audio>
       </header>
       <div class="row">
-        <div class="col-lg-6 order-lg-last">
-          <figure class="figure mb-5 mb-lg-0">
+        <div class="col-md-6 order-md-last">
+          <figure class="figure mb-5 mb-md-0" id="figure">
             <img src="figure.jpg" class="figure-img img-fluid rounded" alt="Orlando Timotius Hutapea">
-            <figcaption class="d-none d-lg-block figure-caption text-lg-center">Me.</figcaption>
+            <figcaption class="d-none d-md-block figure-caption text-md-center">Me.</figcaption>
           </figure>
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <section>
             <h3 class="section-title">Who?</h3>
             <p>
@@ -144,8 +138,20 @@
       </footer>
     </main>
     <script>
-      document.getElementById('username-ipa').addEventListener('click', function() {
-        var sound = document.getElementById('username-ipa-audio')
+      function setFigureElementSticky() {
+        let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+        let figureElement = document.getElementById('figure')
+
+        figureElement.style.setProperty('position', 'sticky')
+        figureElement.style.setProperty('position', '-webkit-sticky')
+        figureElement.style.setProperty('top', (vh/2 - figureElement.offsetHeight/2) + 'px', 'important')
+      }
+
+      window.addEventListener('resize', setFigureElementSticky)
+      setFigureElementSticky()
+
+      document.getElementById('username-ipa').addEventListener('click', () => {
+        let sound = document.getElementById('username-ipa-audio')
         sound.play()
       })
     </script>
