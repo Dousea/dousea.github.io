@@ -6,6 +6,10 @@
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -25,7 +29,7 @@
         margin: 3rem 0rem;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         body {
           text-align: center;
         }
@@ -51,6 +55,21 @@
       main > *:not(:last-child),
       section:not(:last-child) {
         margin-bottom: 3rem;
+      }
+
+      address a {
+        display: flex;
+        display: -ms-flexbox;
+        align-items: center;
+        -ms-flex-align: center;
+      }
+
+      address a:not(:last-child) {
+        margin-bottom: 0.25rem;
+      }
+
+      address a span {
+        margin-left: 0.25rem;
       }
 
       #name, #username, #username-ipa {
@@ -93,7 +112,7 @@
         </div>
         <div class="col-md-6">
           <section>
-            <h3 class="section-title">Who?</h3>
+            <h3 class="section-title">About</h3>
             <p>
               My name is <strong>Orlando Timotius Hutapea</strong>.
               I'd like to be called <strong>Dousea</strong> in the internet though.
@@ -101,9 +120,6 @@
               But those two are the things that I really love doing.
               I am proud of what I do.
             </p>
-          </section>
-          <section>
-            <h3 class="section-title">Why?</h3>
             <p>
               You are probably wondering why <strong>Dousea</strong>.
               Just lack of creativity and a bit of laziness.
@@ -111,9 +127,6 @@
               <strong>us</strong> is taken from Timoti<strong>us</strong>,
               <strong>ea</strong> is taken from Hutap<strong>ea</strong>.
             </p>
-          </section>
-          <section>
-            <h3 class="section-title">How?</h3>
             <p>
               In my early days of knowing the internet and computer, I really liked playing games.
               I mean really. From those days onward, I was asking myself,
@@ -121,15 +134,37 @@
               That question alone drove my motivation to learn programming. And it didn't stop only
               at games.
             </p>
-          </section>
-          <section>
-            <h3 class="section-title">Where?</h3>
             <p>
               I have been living in Bekasi as a student in <strong>Universitas Krisnadwipayana</strong>
               since 2018. I have worked in <strong>PT Nota Kejar Cita</strong>
               as an IT developer for a project called <a href="https://kejarcita.id/" target="_blank">kejarcita</a> since
               2019.
             </p>
+          </section>
+          <section>
+            <h3 class="section-title">Contact & Social Media</h3>
+            <address>
+              <a href="mailto:orlando.timotius.hutapea@gmail.com">
+                <ion-icon name="mail-outline"></ion-icon>
+                <span>Email</span>
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=6281247796252" target="_blank">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+                <span>WhatsApp</span>
+              </a>
+              <a href="https://github.com/Dousea" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+                <span>GitHub</span>
+              </a>
+              <a href="https://bitbucket.org/Dousea/" target="_blank">
+                <ion-icon name="logo-bitbucket"></ion-icon>
+                <span>Bitbucket</span>
+              </a>
+              <a href="https://www.instagram.com/orlando.hutapea/" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+                <span>Instagram</span>
+              </a>
+            </address>
           </section>
         </div>
       </div>
