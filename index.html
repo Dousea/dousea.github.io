@@ -42,6 +42,11 @@
         text-decoration: underline dotted;
       }
 
+      main > *:not(:last-child),
+      section:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
       #name, #username, #username-ipa {
         letter-spacing: 0.2rem;
       }
@@ -73,7 +78,7 @@
 	</head>
 	<body>
     <main class="container">
-      <header class="mb-5">
+      <header>
         <h1 id="name">Orlando Timotius Hutapea</h1>
         <h2 id="username">Dousea</h2>
         <a href="#" id="username-ipa">\dōseä</a>
@@ -87,7 +92,7 @@
           </figure>
         </div>
         <div class="col-lg-6">
-          <section class="mb-5">
+          <section>
             <h3 class="section-title">Who?</h3>
             <p>
               My name is <strong>Orlando Timotius Hutapea</strong>.
@@ -97,7 +102,7 @@
               I am proud of what I do.
             </p>
           </section>
-          <section class="mb-5">
+          <section>
             <h3 class="section-title">Why?</h3>
             <p>
               You are probably wondering why <strong>Dousea</strong>.
@@ -107,7 +112,7 @@
               <strong>ea</strong> is taken from Hutap<strong>ea</strong>.
             </p>
           </section>
-          <section class="mb-5">
+          <section>
             <h3 class="section-title">How?</h3>
             <p>
               In my early days of knowing the internet and computer, I really liked playing games.
@@ -117,7 +122,7 @@
               at games.
             </p>
           </section>
-          <section class="mb-5">
+          <section>
             <h3 class="section-title">Where?</h3>
             <p>
               I have been living in Bekasi as a student in <strong>Universitas Krisnadwipayana</strong>
