@@ -1,1 +1,130 @@
-Hello world!
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900">
+
+    <title>Dousea • Orlando Timotius Hutapea</title>
+    
+    <style>
+      body {
+        font-family: 'Poppins', serif;
+        background-color: black;
+        color: #aaa;
+        margin: 3rem;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+      }
+
+      a {
+        color: #8d6e63;
+      }
+
+      a:hover {
+        color: #a1887f;
+        text-decoration: underline dotted;
+      }
+
+      #name, #username, #username-ipa {
+        letter-spacing: 0.2rem;
+      }
+
+      #name {
+        font-weight: 900;
+      }
+
+      #username, #username-ipa {
+        font-weight: 600;
+      }
+
+      #username {
+        font-size: 1.75rem;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+      }
+
+      .figure {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 3rem;
+      }
+    </style>
+	</head>
+	<body>
+    <main class="container">
+      <header class="mb-5">
+        <h1 id="name">Orlando Timotius Hutapea</h1>
+        <h2 id="username">Dousea</h2>
+        <a href="#" id="username-ipa">\dōseä</a>
+        <audio id="username-ipa-audio" src="username-ipa.mp3"></audio>
+      </header>
+      <div class="row">
+        <div class="col-lg-6">
+          <section class="mb-5">
+            <h1 class="section-title">Who?</h1>
+            <p>
+              My name is <strong>Orlando Timotius Hutapea</strong>.
+              I'd like to be called <strong>Dousea</strong> in the internet though.
+              I don't really do much besides taking a coffee and programming.
+              But those two are the things that I really love doing.
+              I am proud of what I do.
+            </p>
+          </section>
+          <section class="mb-5">
+            <h1 class="section-title">Why?</h1>
+            <p>
+              You are probably wondering why <strong>Dousea</strong>.
+              Just lack of creativity and a bit of laziness.
+              <strong>Do</strong> is taken from Orlan<strong>do</strong>,
+              <strong>us</strong> is taken from Timoti<strong>us</strong>,
+              <strong>ea</strong> is taken from Hutap<strong>ea</strong>.
+            </p>
+          </section>
+          <section class="mb-5">
+            <h1 class="section-title">How?</h1>
+            <p>
+              In my early days of knowing the internet and computer, I really liked playing games.
+              I mean really. From those days onward, I was asking myself,
+              <em>"what if I create my own games?"</em>.
+              That question alone drove my motivation to learn programming. And it didn't stop only
+              at games.
+            </p>
+          </section>
+          <section class="mb-5">
+            <h1 class="section-title">Where?</h1>
+            <p>
+              I have been living in Bekasi as a student in <strong>Universitas Krisnadwipayana</strong>
+              since 2018. I have worked in <strong>PT Nota Kejar Cita</strong>
+              as an IT developer for a project called <a href="https://kejarcita.id/" target="_blank">kejarcita</a> since
+              2019.
+            </p>
+          </section>
+        </div>
+        <div class="col-lg-6 order-first order-lg-last">
+          <figure class="figure mb-5 mb-lg-0">
+            <img src="figure.jpg" class="figure-img img-fluid rounded" alt="Orlando Timotius Hutapea">
+            <figcaption class="d-none d-lg-block figure-caption text-lg-center">Me.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <footer class="small">
+        2020 &#8226; Orlando Timotius Hutapea
+      </footer>
+    </main>
+    <script type="text/javascript">
+      document.getElementById('username-ipa').addEventListener('click', function() {
+        var sound = document.getElementById('username-ipa-audio')
+        sound.play()
+      })
+    </script>
+  </body>
+</html>
