@@ -16,7 +16,7 @@ main {
   top: 0;
   left: 0;
   background-color: black;
-  position: absolute;
+  position: fixed;
   z-index: 999;
 }
 
