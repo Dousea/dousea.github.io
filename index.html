@@ -3,14 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -18,89 +15,8 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
     <title>Dousea • Orlando Timotius Hutapea</title>
-    
-    <style>
-      body {
-        font-family: 'Poppins', serif;
-        background-color: black;
-        color: #aaa;
-        margin: 3rem 0rem;
-      }
-
-      @media (max-width: 767px) {
-        body {
-          text-align: center;
-        }
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        color: #fff;
-      }
-
-      p {
-        text-align: justify;
-      }
-
-      a {
-        color: #8d6e63;
-      }
-
-      a:hover {
-        color: #a1887f;
-        text-decoration: underline dotted;
-      }
-
-      main > *:not(:last-child),
-      section:not(:last-child) {
-        margin-bottom: 3rem;
-      }
-
-      address a {
-        display: flex;
-        display: -ms-flexbox;
-        align-items: center;
-        -ms-flex-align: center;
-      }
-
-      @media (max-width: 767px) {
-        address a {
-          justify-content: center;
-          -ms-flex-pack: center;
-        }
-      }
-
-      address a:not(:last-child) {
-        margin-bottom: 0.25rem;
-      }
-
-      address a span {
-        margin-left: 0.25rem;
-      }
-
-      #name, #username, #username-ipa {
-        letter-spacing: 0.2rem;
-      }
-
-      #name {
-        font-weight: 900;
-      }
-
-      #username, #username-ipa {
-        font-weight: 600;
-      }
-
-      #username {
-        font-size: 1.75rem;
-      }
-
-      .section-title {
-        font-size: 1.25rem;
-        font-weight: 700;
-        letter-spacing: 0.2rem;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main class="container">
@@ -179,23 +95,6 @@
         2020 &#8226; Orlando Timotius Hutapea
       </footer>
     </main>
-    <script>
-      function setFigureElementSticky() {
-        let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-        let figureElement = document.getElementById('figure')
-
-        figureElement.style.setProperty('position', 'sticky')
-        figureElement.style.setProperty('position', '-webkit-sticky')
-        figureElement.style.setProperty('top', (vh/2 - figureElement.offsetHeight/2) + 'px', 'important')
-      }
-
-      window.addEventListener('resize', setFigureElementSticky)
-      window.addEventListener('load', setFigureElementSticky)
-
-      document.getElementById('username-ipa').addEventListener('click', () => {
-        let sound = document.getElementById('username-ipa-audio')
-        sound.play()
-      })
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
