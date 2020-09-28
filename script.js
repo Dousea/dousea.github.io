@@ -10,6 +10,8 @@ function setFigureElementSticky() {
 function removeLogo(logoFinishedDelay) {
   setTimeout(() => {
     if (document.readyState == 'complete') {
+      setFigureElementSticky()
+
       let logo = document.querySelector('.logo-container')
       logo.style.setProperty('opacity', '0')
       logo.style.setProperty('fill', 'white')
@@ -43,7 +45,6 @@ function animateLogo() {
 }
 
 window.addEventListener('resize', setFigureElementSticky)
-window.addEventListener('load', setFigureElementSticky)
 animateLogo()
 
 document.getElementById('username-ipa')
