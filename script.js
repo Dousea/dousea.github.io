@@ -41,15 +41,18 @@ function animateLogo() {
 animateLogo()
 
 function setBackground() {
-  let background = document.querySelector('.background')
-  background.style.setProperty('height', `${document.body.clientHeight-document.documentElement.clientHeight}px`)
+  document.querySelector('.background').style.setProperty('height', `${document.body.clientHeight-document.documentElement.clientHeight}px`)
+  setBackgroundHeader();
+}
 
+function setBackgroundHeader() {
   document.querySelector('.background-header').style
-    .setProperty('height', `${background.getBoundingClientRect().top-document.querySelector('.header-text').getBoundingClientRect().top}px`)
+    .setProperty('height', `${document.querySelector('.background').getBoundingClientRect().top-document.querySelector('.header-text').getBoundingClientRect().top}px`)
 }
 
 window.addEventListener('resize', setBackground)
 window.addEventListener('load', setBackground)
+window.addEventListener('scroll', setBackgroundHeader)
 
 document.getElementById('username-ipa')
   .addEventListener('click', () => document.getElementById('username-ipa-audio').play())
