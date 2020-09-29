@@ -41,10 +41,11 @@ function animateLogo() {
 animateLogo()
 
 function setBackground() {
+  let background = document.querySelector('.background')
+  background.style.setProperty('height', `${document.body.clientHeight-document.documentElement.clientHeight}px`)
+
   document.querySelector('.background-header').style
-    .setProperty('height', `${document.querySelector('.header-text').clientHeight}px`)
-  document.querySelector('.background').style
-    .setProperty('height', `${document.body.clientHeight-document.documentElement.clientHeight}px`)
+    .setProperty('height', `${background.getBoundingClientRect().top-document.querySelector('.header-text').getBoundingClientRect().top}px`)
 }
 
 window.addEventListener('resize', setBackground)
