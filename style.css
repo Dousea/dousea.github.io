@@ -92,6 +92,10 @@ header {
   width: 100%;
 }
 
+section {
+  padding: 1.5rem 0;
+}
+
 address div {
   display: flex;
   justify-content: flex-end;
