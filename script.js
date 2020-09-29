@@ -3,14 +3,16 @@ const delayPerPath = .25
 function removeLogo(logoFinishedDelay) {
   setTimeout(() => {
     if (document.readyState == 'complete') {
-      let logo = document.querySelector('.logo-container')
-      logo.style.setProperty('opacity', '0')
-      logo.style.setProperty('fill', 'white')
-      logo.style.setProperty('animation', 'logo-remove 1s')
+      let logo = $('.logo-container')
+      logo.css({
+        'opacity': '0',
+        'fill': 'white',
+        'animation': 'logo-remove 1s'
+      })
 
       setTimeout(() => {
-        document.body.style.removeProperty('overflow');
-        logo.parentNode.removeChild(logo)
+        $(document.body).css('overflow', '')
+        logo.remove()
       }, 1000)
     } else {
       removeLogo(logoFinishedDelay)
@@ -19,36 +21,33 @@ function removeLogo(logoFinishedDelay) {
 }
 
 function animateLogo() {
-  document.body.style.setProperty('overflow', 'hidden');
+  $(document.body).css('overflow', 'hidden')
 
-  let logoPaths = document.querySelectorAll('#logo path')
-
-  for (let i = 0; i < logoPaths.length; i++) {
-    let pathLength = logoPaths[i].getTotalLength()
-    logoPaths[i].style.setProperty('stroke-dasharray', `${pathLength}px`)
-    logoPaths[i].style.setProperty('stroke-dashoffset', `${pathLength}px`)
-    logoPaths[i].style.setProperty('animation', `logo-stroke 2s ease forwards ${i*delayPerPath}s`)
-  }
+  let logoPaths = $('#logo path')
+  logoPaths.each((index, element) => {
+    let path = $(element)
+    let pathLength = path[0].getTotalLength()
+    path.css({
+      'stroke-dasharray': `${pathLength}px`,
+      'stroke-dashoffset': `${pathLength}px`,
+      'animation': `logo-stroke 2s ease forwards ${index*delayPerPath}s`
+    })
+  })
 
   let logoFinishedDelay = (logoPaths.length + 1)*delayPerPath
-
-  document.getElementById('logo').style
-    .setProperty('animation', `logo-fill 0.5s ease forwards ${logoFinishedDelay}s`)
-
+  $('#logo').css('animation', `logo-fill 0.5s ease forwards ${logoFinishedDelay}s`)
   removeLogo(logoFinishedDelay)
 }
 
 animateLogo()
 
 function setBackground() {
-  let background = document.querySelector('.background')
-  background.style.setProperty('height', `${document.body.getBoundingClientRect().bottom-document.querySelector('main section:first-child').getBoundingClientRect().top}px`)
-  document.querySelector('.background-header')
-    .style.setProperty('height', `${background.getBoundingClientRect().top-document.querySelector('.header-text').getBoundingClientRect().top}px`)
+  let background = $('.background')
+  background.css('height', `${document.body.getBoundingClientRect().bottom-$('main section:first-child')[0].getBoundingClientRect().top}px`)
+  $('.background-header').css('height', `${background[0].getBoundingClientRect().top-$('.header-text')[0].getBoundingClientRect().top}px`)
 }
 
-window.addEventListener('resize', setBackground)
-window.addEventListener('load', setBackground)
+$(window).on('resize', setBackground)
+$(window).on('load', setBackground)
 
-document.getElementById('username-ipa')
-  .addEventListener('click', () => document.getElementById('username-ipa-audio').play())
+$('#username-ipa').on('click', () => $('#username-ipa-audio')[0].play())
