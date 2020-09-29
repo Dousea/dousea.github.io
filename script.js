@@ -42,7 +42,7 @@ animateLogo()
 
 function setBackground() {
   let background = document.querySelector('.background')
-  background.style.setProperty('height', `${document.body.clientHeight-document.documentElement.clientHeight}px`)
+  background.style.setProperty('height', `${document.body.getBoundingClientRect().bottom-document.querySelector('main section:first-child').getBoundingClientRect().top}px`)
   document.querySelector('.background-header')
     .style.setProperty('height', `${background.getBoundingClientRect().top-document.querySelector('.header-text').getBoundingClientRect().top}px`)
 }
