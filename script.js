@@ -1,23 +1,15 @@
 const delayPerPath = .25
 
-function setFigureElementSticky() {
-  let viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-  let figureElement = document.getElementById('figure')
-  figureElement.style.setProperty('position', 'sticky')
-  figureElement.style.setProperty('top', `${viewportHeight/2 - figureElement.offsetHeight/2}px`)
-}
-
 function removeLogo(logoFinishedDelay) {
   setTimeout(() => {
     if (document.readyState == 'complete') {
-      setFigureElementSticky()
-
       let logo = document.querySelector('.logo-container')
       logo.style.setProperty('opacity', '0')
       logo.style.setProperty('fill', 'white')
       logo.style.setProperty('animation', 'logo-remove 1s')
 
       setTimeout(() => {
+        document.body.style.removeProperty('overflow');
         logo.parentNode.removeChild(logo)
       }, 1000)
     } else {
@@ -27,6 +19,8 @@ function removeLogo(logoFinishedDelay) {
 }
 
 function animateLogo() {
+  document.body.style.setProperty('overflow', 'hidden');
+
   let logoPaths = document.querySelectorAll('#logo path')
 
   for (let i = 0; i < logoPaths.length; i++) {
@@ -44,8 +38,17 @@ function animateLogo() {
   removeLogo(logoFinishedDelay)
 }
 
-window.addEventListener('resize', setFigureElementSticky)
 animateLogo()
+
+function setBackground() {
+  document.querySelector('.background-header').style
+    .setProperty('height', `${document.querySelector('.header-text').clientHeight}px`)
+  document.querySelector('.background').style
+    .setProperty('height', `${document.body.clientHeight-document.documentElement.clientHeight}px`)
+}
+
+window.addEventListener('resize', setBackground)
+window.addEventListener('load', setBackground)
 
 document.getElementById('username-ipa')
   .addEventListener('click', () => document.getElementById('username-ipa-audio').play())
