@@ -1,6 +1,8 @@
 body {
   font-family: 'Poppins', serif;
-  background: black url(figure.jpg) center / cover no-repeat fixed;
+  background: black url(figure.jpg) center no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
   color: #ccc;
 }
 
