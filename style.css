@@ -11,6 +11,8 @@ body {
 
 #top-info,
 #bottom-info {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   position: absolute;
   width: 100%;
   padding: 2rem;
