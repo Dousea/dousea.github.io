@@ -1,72 +1,42 @@
 body {
-  font-family: 'Poppins', serif;
-  background: black url(figure.jpg) center no-repeat fixed;
-  -webkit-background-size: cover;
-  background-size: cover;
-  color: #ccc;
-}
-
-.logo-container {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: black;
-  position: fixed;
-  z-index: 999;
-}
-
-@keyframes logo-remove {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-#logo {
-  width: 75%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes logo-stroke {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes logo-fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: white;
-  }
-}
-
-@media (max-width: 767px) {
-  main > *:not(header) {
-    text-align: center;
-  }
-}
-
-main {
-  padding-bottom: 3rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  background-color: #000;
   color: #fff;
+  font-family: Monospace;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  overscroll-behavior: none;
+  overflow: hidden;
 }
 
-p {
-  text-align: justify;
+#top-info,
+#bottom-info {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1; /* TODO Solve this in HTML */
+}
+
+#top-info {
+  top: 0;
+}
+
+#bottom-info {
+  bottom: 0;
+}
+
+#full-name {
+  font-size: 1rem;
 }
 
 button {
+  font-family: Monospace;
   border: none;
   padding: 0;
   background: none;
@@ -79,99 +49,4 @@ a, button {
 a:hover, button:hover {
   color: #a1887f;
   text-decoration: underline dotted;
-}
-
-header {
-  position: relative;
-  height: 100vh;
-}
-
-.header-text {
-  position: absolute;
-  padding-bottom: 3rem;
-  top: 100%;
-  transform: translateY(-100%);
-  width: 75%;
-}
-
-section {
-  padding: 1.5rem 0;
-}
-
-address div {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.5rem;
-}
-
-address a {
-  display: inline-flex;
-  align-items: center;
-}
-
-address ion-icon {
-  font-size: 2rem;
-}
-
-@media (max-width: 767px) {
-  address div {
-    display: inline-block;
-    margin: 0.25rem;
-  }
-
-  address a span {
-    display: none;
-  }
-}
-
-address a:not(:last-child) {
-  margin-bottom: 0.5rem;
-}
-
-address a span {
-  margin-right: 0.5rem;
-}
-
-#name, #username, #username-ipa {
-  letter-spacing: 0.2rem;
-}
-
-#name {
-  font-weight: 900;
-}
-
-#username, #username-ipa {
-  font-weight: 600;
-}
-
-#username {
-  font-size: 1.75rem;
-}
-
-.section-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  margin-bottom: 1rem;
-}
-
-footer {
-  text-align: center;
-}
-
-.background-header {
-  position: absolute;
-  width: 100%;
-  top: 100vh;
-  transform: translateY(-100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-  z-index: -1;
-}
-
-.background {
-  position: absolute;
-  width: 100%;
-  top: 100vh;
-  background: black;
-  z-index: -1;
 }
