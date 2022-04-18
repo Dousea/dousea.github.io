@@ -159,7 +159,7 @@
         effect = new AsciiEffect(
           renderer,
           " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
-          { resolution: 0.2, invert: true }
+          { resolution: 0.225, invert: true }
         );
         effect.setSize(window.innerWidth, window.innerHeight);
         effect.domElement.style.color = "white";
@@ -203,10 +203,14 @@
       }
 
       function createText() {
+        let size = 48 * (window.innerWidth / window.innerHeight);
+        if (size > 70) size = 70;
+        if (size < 20) size = 20;
+
         textGeo = new TextGeometry("Dousea", {
           font: font,
           height: height,
-          size: 48 * (window.innerWidth / window.innerHeight),
+          size: size,
           hover: hover,
           curveSegments: 4,
           bevelEnabled: true,
