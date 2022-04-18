@@ -8,13 +8,13 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
     <link type="text/css" rel="stylesheet" href="style.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <div id="top-info">
@@ -87,8 +87,6 @@
 
       THREE.Cache.enabled = true;
 
-      let container;
-
       let camera, cameraTarget, scene, renderer, effect;
 
       let group, textMesh1, textMesh2, textGeo, materials;
@@ -96,7 +94,7 @@
       let font;
 
       let height = 20,
-        hover = 10;
+        hover = 0;
 
       const mirror = false;
 
@@ -112,9 +110,6 @@
       animate();
 
       function init() {
-        container = document.createElement("div");
-        document.body.appendChild(container);
-
         // CAMERA
 
         camera = new THREE.PerspectiveCamera(
@@ -149,7 +144,6 @@
         ];
 
         group = new THREE.Group();
-        group.position.x = -30;
         group.position.y = 125;
 
         scene.add(group);
@@ -162,17 +156,21 @@
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        effect = new AsciiEffect(renderer, " .:-+*=%@#", { invert: true });
+        effect = new AsciiEffect(
+          renderer,
+          " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+          { resolution: 0.2, invert: true }
+        );
         effect.setSize(window.innerWidth, window.innerHeight);
         effect.domElement.style.color = "white";
         effect.domElement.style.backgroundColor = "black";
 
-        container.appendChild(effect.domElement);
+        document.body.appendChild(effect.domElement);
 
         // EVENTS
 
-        container.style.touchAction = "none";
-        container.addEventListener("pointerdown", onPointerDown);
+        document.body.style.touchAction = "none";
+        document.body.addEventListener("pointerdown", onPointerDown);
 
         //
 
@@ -187,6 +185,7 @@
 
         renderer.setSize(window.innerWidth, window.innerHeight);
         effect.setSize(window.innerWidth, window.innerHeight);
+        refreshText();
       }
 
       //
@@ -198,7 +197,7 @@
           function (response) {
             font = response;
 
-            createText();
+            refreshText();
           }
         );
       }
@@ -207,7 +206,7 @@
         textGeo = new TextGeometry("Dousea", {
           font: font,
           height: height,
-          size: 70,
+          size: 48 * (window.innerWidth / window.innerHeight),
           hover: hover,
           curveSegments: 4,
           bevelEnabled: true,
@@ -243,6 +242,12 @@
 
           group.add(textMesh2);
         }
+      }
+
+      function refreshText() {
+        group.remove(textMesh1);
+        if (mirror) group.remove(textMesh2);
+        createText();
       }
 
       function onPointerDown(event) {
